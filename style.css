@@ -1,86 +1,138 @@
-/* Reset básico */
-* {
+ {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #007BFF, #00C6FF);
   height: 100vh;
+  background: linear-gradient(135deg, #c3aed6, #a393eb, #b8b0f1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.login-container {
-  background-color: #fff;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  width: 320px;
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(162, 138, 224, 0.3);
+  width: 350px;
   text-align: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.7s ease forwards;
 }
 
-.login-container h2 {
-  margin-bottom: 25px;
-  color: #333;
+.login-box:hover {
+  transform: translateY(-5px);
 }
 
+.login-box h1 {
+  color: #4a3b7b;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  color: #6a5fa8;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+/* Campos de entrada */
 .input-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #333;
+  position: relative;
+  margin-bottom: 25px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 12px 10px;
+  border: none;
+  border-bottom: 2px solid #c9bdf2;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  transition: 0.3s;
+  color: #4a3b7b;
+}
+
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #8b80d2;
   font-size: 15px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -10px;
+  font-size: 13px;
+  color: #7c65c1;
 }
 
 .input-group input:focus {
-  border-color: #007BFF;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  border-color: #7c65c1;
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  background-color: #007BFF;
+  background: linear-gradient(135deg, #a393eb, #7c65c1);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
+  padding: 12px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #7c65c1, #6a5fa8);
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(108, 90, 172, 0.4);
 }
 
 .register-link {
-  margin-top: 15px;
+  margin-top: 25px;
   font-size: 14px;
-  color: #555;
+  color: #6a5fa8;
 }
 
 .register-link a {
-  color: #007BFF;
+  color: #7c65c1;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .register-link a:hover {
   text-decoration: underline;
 }
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
